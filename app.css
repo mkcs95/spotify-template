@@ -1,3 +1,8 @@
 body {
   padding:10px;
 }
+
+.container-fixed ul li img {
+	width:200px;
+	height: 200px;
+}

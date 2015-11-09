@@ -1,8 +1,47 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+
 body {
   padding:10px;
+  background-color: black;
+  background-image: url('../img/space.jpg');
 }
 
-.container-fixed ul li img {
-	width:200px;
-	height: 200px;
+.form-group label{
+	color:white;
+	font-size: 45px;
 }
+
+#container-fixed ul li img {
+	display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+
+}
+
+#container-fixed ul {
+	list-style-type: none;
+}
+
+#container-fixed {
+	
+	width: 100%;
+	z-index: 9999;
+}
+
+.form-group button{
+	margin: auto;
+}
+
+footer{
+	color: white;
+	text-align: right;
+	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+}
+
+

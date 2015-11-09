@@ -22,9 +22,10 @@
 	<div ng-app="myApp" ng-controller="myCtrl">
 		<!-- Form -->
 		<form class="container" name="songForm">
-			<div class="form-group">
-				<label>Spotify search:</label>
-				<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+			<div class="form-group" ng-class="{'has-error' : myForm.search.$touch && myForm.search.$invalid}">
+				<label>Search for an artist or song:</label>
+				<input name="search" type="search" placeholder="Enter your search.." ng-model="track" class="form-control" ng-minlength="0"></input>
+				<p ng-show="myForm.search.$error.search" class="help-block">Must enter field</p>
 			</div>
 			<div class="form-group">
 				<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
@@ -32,16 +33,20 @@
 		</form>
 		
 		<!-- Results -->
-		<div class="container-fixed">
-			<div class="help-block">
-				<span ng-show="tracks.length>0">Click to sample</span>
+		<div id="container-fixed">
+			<div id="help-block">
+				<span ng-show="tracks.length>0"></span>
 				<span ng-show="currentSong && !audioObject.paused">(playing)</span>
 			</div>
+
+			<div>
 			<ul>
-				<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}<br><img ng-src="{{track.album.images[1].url}}"></li>
-			</ul>			
+				<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}"><!--{{track.name + ', by ' + track.artists[0].name}}--><br><img ng-src="{{track.album.images[1].url}}"></li>
+			</ul>
+			</div>			
 		</div>
 	</div>
 	</div>
+	<footer>Brought to you by Saulon &amp; Banala Productions</footer>
 </body>
 </html>

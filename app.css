@@ -7,7 +7,7 @@
 body {
   padding:10px;
   background-color: black;
-  background: url(../img/space.jpg);
+  background: url(img/space.jpg);
 }
 
 .form-group label{

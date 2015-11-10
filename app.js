@@ -1,6 +1,16 @@
 var data;
 var baseUrl = 'https://api.spotify.com/v1/search?type=track&query='
-var myApp = angular.module('myApp', [])
+var myApp = angular.module('myApp', []);
+var validApp = angular.module('validApp', []);
+
+var myCtrl = validApp.controller('myCtrl',function($scope){
+  $scope.submitForm = function() {
+    if ($scope.myForm.$valid){
+      alert('works');
+    }
+  }
+})
+
 
 var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
   $scope.audioObject = {}
